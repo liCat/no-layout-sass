@@ -1,7 +1,7 @@
 /**
  * Flex Utilities
  *
- * This is a set of classes or placeholders that help you reuse codes to to the extreme.
+ * This is a set of placeholders that help you reuse codes to to the extreme.
  *
  * 1. Flex Container Properties
  * 2. Flex Item Properties
@@ -20,20 +20,12 @@
  */
 
 // ennable container to be a flex container as well as a block container
-.flex
-  +flex
-  flex: none
-
 %flex
   +flex
   flex: none
 
 
 // ennable container to be a flex container as well as a inline-block container
-.inline-flex
-  +inline-flex
-  flex: none
-
 %inline-flex
   +inline-flex
   flex: none
@@ -43,12 +35,6 @@
  * ennable container to be a flex container as well as block element and make items
  * in the container layout horizontal
  */
-.horizontal,
-.row
-  +flex
-  +flex-direction(row)
-  flex: none
-
 %horizontal,
 %row
   +flex
@@ -60,12 +46,6 @@
  * ennable container to be a flex container as well as inline-block element and make
  * items in the container layout horizontal
  */
-.inline-horizontal,
-.inline-row
-  +inline-flex
-  +flex-direction(row)
-  flex: none
-
 %inline-horizontal,
 %inline-row
   +inline-flex
@@ -77,12 +57,6 @@
  * ennable container to be a flex container as well as block element and make items in
  * the container layout vertical
  */
-.vertical,
-.column
-  +flex
-  +flex-direction(column)
-  flex: none
-
 %vertical,
 %column
   +flex
@@ -94,12 +68,6 @@
  * ennable container to be a flex container as well as inline-block element and make
  * items in the container layout vertical
  */
-.inline-vertical,
-.inline-column
-  +inline-flex
-  +flex-direction(column)
-  flex: none
-
 %inline-vertical,
 %inline-column
   +inline-flex
@@ -111,22 +79,6 @@
  * By default, children stretch to fit the cross-axis, bellow class will enable them to start,
  * center, baseline or end accros the main axis.
  */
-.start,
-.align-start
-  +align-items(flex-start)
-
-.center,
-.align-center
-  +align-items(center)
-
-.baseline,
-.align-baseline
-  +align-items(baseline)
-
-.end,
-.align-end
-  +align-items(flex-end)
-
 %start,
 %align-start
   +align-items(flex-start)
@@ -145,22 +97,6 @@
 
 
 // Justifying content
-.center-justify,
-.justify-center
-  +justify-content(center)
-
-.end-justify,
-.justify-end
-  +justify-content(flex-end)
-
-.around-justify,
-.justify-space-around
-  +justify-content(space-around)
-
-.justify,
-.justify-space-between
-  +justify-content(space-between)
-
 %center-justify,
 %justify-center
   +justify-content(center)
@@ -179,16 +115,11 @@
 
 
 // enable wrapped layouts
-.wrap
-  +flex-wrap(wrap)
 %wrap
   +flex-wrap(wrap)
 
 
 // mirror layout direction
-.reverse
-  +flex-direction(row-reverse)
-
 %reverse
   +flex-direction(row-reverse)
 
@@ -201,23 +132,10 @@
 
 // set children items' percentage of the remainder
 @for $i from 1 to 20
-  .flex-#{$i}
-    +item-flex($i)
-
-@for $i from 1 to 20
   %flex-#{$i}
     +item-flex($i)
 
 // self-align
-.self-start
-  +align-self(flex-start)
-
-.self-center
-  +align-self(center)
-
-.self-end
-  +align-self(flex-end)
-
 %self-start
   +align-self(flex-start)
 
